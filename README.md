@@ -74,3 +74,9 @@ When you deploy the app you should be able to see your Hololens device join the 
 - Render lines for bones like in the Kinect View example
 - Reduce noise in the movements
 - Track the location of the Kinect so that bodies can be placed in their real location
+
+## Known Errors
+- Sometimes the Hololens-Receiver app crashes in the Unity Editor upon receiving skeletal data
+
+## Credits
+This was made for Hololens development at the Studio for Creative Inquiry. Feel free to use these scripts for your own Hololens + Kinect projects.
