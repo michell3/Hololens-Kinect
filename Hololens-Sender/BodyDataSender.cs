@@ -56,7 +56,10 @@ public class BodyDataSender : Singleton<BodyDataSender> {
         List<ulong> trackingIDs = new List<ulong>(bodyData.Keys);
         foreach (ulong trackingID in trackingIDs) {
             CustomMessages2.Instance.SendBodyData(trackingID, true, bodyData[trackingID]);
-            _knownIDs.Add(trackingID);
+            
+            // add if new
+            if (!_knownIDs.Contains(trackingID))
+                _knownIDs.Add(trackingID);
         }
     }
 }
