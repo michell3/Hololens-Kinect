@@ -11,7 +11,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Kinect = Windows.Kinect;
 
-public class BodyDataConverter : MonoBehaviour {
+public class BodyDataConverter : MonoBehaviour, IBodyData
+{
 
     public GameObject KinectBodyData;
     
