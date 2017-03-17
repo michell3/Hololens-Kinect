@@ -11,11 +11,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Receives the body data messages
-public class BodyDataReceiver : Singleton<BodyDataReceiver> {
+public class BodyDataReceiver : Singleton<BodyDataReceiver>, IBodyData {
 
-    private Dictionary<long, Vector3[]> _Bodies = new Dictionary<long, Vector3[]>();
+    private Dictionary<ulong, Vector3[]> _Bodies = new Dictionary<ulong, Vector3[]>();
 
-    public Dictionary<long, Vector3[]> GetData() {
+    public Dictionary<ulong, Vector3[]> GetData() {
         return _Bodies;
     }
 
@@ -27,7 +27,14 @@ public class BodyDataReceiver : Singleton<BodyDataReceiver> {
     // Called when reading in Kinect body data
     void UpdateBodyData(NetworkInMessage msg) {
         // Parse the message
-        long trackingID = msg.ReadInt64();
+        ulong trackingID = (ulong)msg.ReadInt64();
+        bool isAlive = System.Convert.ToBoolean(msg.ReadByte());
+        if (!isAlive)
+        {
+            //remove
+            _Bodies.Remove(trackingID);
+            return;
+        }
         Vector3 jointPos;
         Vector3[] jointPositions = new Vector3[25];
 
