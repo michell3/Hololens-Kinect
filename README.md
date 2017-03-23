@@ -25,10 +25,10 @@ Here are some useful developer links to get started with the Hololens:
 ## Usage
 Before running/deploying either app, start the **Sharing Session Manager** from the HoloToolkit menu in Unity. Take note of the IP address for the Sharing objects in each app.
 
-###Hololens-Sender
+### Hololens-Sender
 The Hololens-Sender Unity app is a program that reads in Kinect skeletal data and broadcasts it to other devices through the Sharing Session Manager. It can be run from the Unity editor and displays the resulting data.
 
-####Setup
+### Setup
 Make sure you include the Kinect Unity Package and HoloToolkit in your new Unity project. See above instructions for setting those up.
 The scene should have 5 things in the hierarchy:
 
@@ -49,10 +49,10 @@ The scene should have 5 things in the hierarchy:
 
 When you run the app you should be able to see your machine join the Sharing Session in the console.
 
-###Hololens-Receiver
+### Hololens-Receiver
 The Hololens-Receiver Unity app is a program that can be deployed on the Hololens that listens for messages about Kinect skeletal data and renders it to screen.
 
-####Setup
+### Setup
 Make sure you include HoloToolkit in your new Unity project. Also make sure that Virtual Reality is enabled in your player settings, and that **internetClient**, **internetClientServer**, and **privateNetworkClientServer** are enabled in the checklist.
 The scene should have 5 things in the hierarchy:
 
